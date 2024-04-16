@@ -1,0 +1,15 @@
+@import "colors.scss";
+
+.footer {
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background-color: $primary-red;
+  box-shadow: -3px 0 10px #000;
+  p {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+  }
+}

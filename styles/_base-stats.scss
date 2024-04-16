@@ -1,0 +1,93 @@
+.base-stats {
+  margin-top: 1rem;
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  > p {
+    text-align: center;
+    font-weight: 500;
+  }
+  > div {
+    > div {
+      margin-top: 1rem;
+      > p {
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .stat {
+        border-radius: 10px;
+        min-height: 1.5rem;
+        transition: 0.5s ease;
+        div {
+          p {
+            color: white;
+            padding: 0.2rem 0.2rem;
+          }
+        }
+        &.hp {
+          background-color: #9ee865;
+          div {
+            background-color: #69dc12;
+            border-radius: 10px;
+          }
+        }
+        &.attack {
+          background-color: #f5de69;
+          div {
+            background-color: #efcc18;
+            border-radius: 10px;
+          }
+        }
+        &.defense {
+          background-color: #f09a65;
+          div {
+            background-color: #e86412;
+            border-radius: 10px;
+          }
+        }
+        &.special-attack {
+          background-color: #66d8f6;
+          div {
+            background-color: #14c3f1;
+            border-radius: 10px;
+          }
+        }
+        &.special-defense {
+          background-color: #899eea;
+          div {
+            background-color: #4a6adf;
+            border-radius: 10px;
+          }
+        }
+        &.speed {
+          background-color: #e46cca;
+          div {
+            background-color: #d51dad;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .base-stats {
+    > div {
+      > div {
+        display: flex;
+        .stat {
+          width: 80%;
+        }
+        > p {
+          width: 20%;
+          text-align: left;
+          border-right: 2px solid #eee;
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}

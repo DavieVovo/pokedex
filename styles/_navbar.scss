@@ -1,0 +1,56 @@
+@import "colors.scss";
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: $primary-red;
+  padding: 1rem;
+  box-shadow: 3px 0px 10px #000;
+  z-index: 5;
+  > div {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .search-bar {
+    position: relative;
+    flex-grow: 1;
+    input {
+      border: 2px solid darken(#2a75bb, 20%);
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: inset 3px 3px 10px #777;
+      &:focus {
+        ~ ul {
+          display: block;
+        }
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+      background-color: white;
+      top: 100%;
+      width: 100%;
+      li {
+        padding: 0.5rem;
+        text-transform: capitalize;
+        transition: 0.5s ease;
+        &:hover {
+          background-color: red;
+        }
+      }
+    }
+  }
+  .nav-title {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    filter: drop-shadow(3px 3px 0 darken(#2a75bb, 20%));
+  }
+}

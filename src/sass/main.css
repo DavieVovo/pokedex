@@ -1,0 +1,505 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+.pokemon-container {
+  position: relative;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s ease;
+}
+.pokemon-container .pokeball-icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.pokemon-container .pokeball-icon path {
+  fill: #ce2211;
+}
+.pokemon-container img {
+  transition: 0.5s ease;
+  width: 100%;
+  z-index: 1;
+  filter: drop-shadow(3px 3px 3px #aaa);
+}
+.pokemon-container:hover .pokeball-icon {
+  opacity: 0.1;
+}
+.pokemon-container:hover img {
+  transform: translateY(-3px);
+}
+
+.nav-title {
+  font-family: "Pokemon Solid", sans-serif !important;
+  letter-spacing: 2px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #ce2211;
+  padding: 1rem;
+  box-shadow: 3px 0px 10px #000;
+  z-index: 5;
+}
+nav > div {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+nav .search-bar {
+  position: relative;
+  flex-grow: 1;
+}
+nav .search-bar input {
+  border: 2px solid #174168;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: inset 3px 3px 10px #777;
+}
+nav .search-bar input:focus ~ ul {
+  display: block;
+}
+nav .search-bar ul {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  width: 100%;
+}
+nav .search-bar ul li {
+  padding: 0.5rem;
+  text-transform: capitalize;
+  transition: 0.5s ease;
+}
+nav .search-bar ul li:hover {
+  background-color: red;
+}
+nav .nav-title {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+  filter: drop-shadow(3px 3px 0 #174168);
+}
+
+.base-stats {
+  margin-top: 1rem;
+}
+.base-stats h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.base-stats > p {
+  text-align: center;
+  font-weight: 500;
+}
+.base-stats > div > div {
+  margin-top: 1rem;
+}
+.base-stats > div > div > p {
+  text-align: center;
+  text-transform: capitalize;
+}
+.base-stats > div > div .stat {
+  border-radius: 10px;
+  min-height: 1.5rem;
+  transition: 0.5s ease;
+}
+.base-stats > div > div .stat div p {
+  color: white;
+  padding: 0.2rem 0.2rem;
+}
+.base-stats > div > div .stat.hp {
+  background-color: #9ee865;
+}
+.base-stats > div > div .stat.hp div {
+  background-color: #69dc12;
+  border-radius: 10px;
+}
+.base-stats > div > div .stat.attack {
+  background-color: #f5de69;
+}
+.base-stats > div > div .stat.attack div {
+  background-color: #efcc18;
+  border-radius: 10px;
+}
+.base-stats > div > div .stat.defense {
+  background-color: #f09a65;
+}
+.base-stats > div > div .stat.defense div {
+  background-color: #e86412;
+  border-radius: 10px;
+}
+.base-stats > div > div .stat.special-attack {
+  background-color: #66d8f6;
+}
+.base-stats > div > div .stat.special-attack div {
+  background-color: #14c3f1;
+  border-radius: 10px;
+}
+.base-stats > div > div .stat.special-defense {
+  background-color: #899eea;
+}
+.base-stats > div > div .stat.special-defense div {
+  background-color: #4a6adf;
+  border-radius: 10px;
+}
+.base-stats > div > div .stat.speed {
+  background-color: #e46cca;
+}
+.base-stats > div > div .stat.speed div {
+  background-color: #d51dad;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 720px) {
+  .base-stats > div > div {
+    display: flex;
+  }
+  .base-stats > div > div .stat {
+    width: 80%;
+  }
+  .base-stats > div > div > p {
+    width: 20%;
+    text-align: left;
+    border-right: 2px solid #eee;
+    margin-right: 2rem;
+  }
+}
+.details {
+  position: relative;
+  padding: 2rem 0;
+  z-index: 0;
+}
+.details > svg {
+  max-width: 500px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  z-index: -1;
+  opacity: 0.1;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+}
+.details .container > div:first-of-type, .details .container > div:nth-of-type(2) {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.details .container > div:first-of-type > svg, .details .container > div:nth-of-type(2) > svg {
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.5));
+}
+.details .container > div:first-of-type a,
+.details .container > div:first-of-type button, .details .container > div:nth-of-type(2) a,
+.details .container > div:nth-of-type(2) button {
+  transition: 0.3s ease;
+}
+.details .container > div:first-of-type a svg,
+.details .container > div:first-of-type button svg, .details .container > div:nth-of-type(2) a svg,
+.details .container > div:nth-of-type(2) button svg {
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.5));
+  transition: 0.2s ease;
+  path-transition: 0.3s ease;
+}
+.details .container > div:first-of-type a svg.shiny-on path,
+.details .container > div:first-of-type button svg.shiny-on path, .details .container > div:nth-of-type(2) a svg.shiny-on path,
+.details .container > div:nth-of-type(2) button svg.shiny-on path {
+  fill: #ffcb05;
+}
+.details .container > div:first-of-type a:active svg,
+.details .container > div:first-of-type button:active svg, .details .container > div:nth-of-type(2) a:active svg,
+.details .container > div:nth-of-type(2) button:active svg {
+  transform: scale(1.1);
+}
+.details .container > div:first-of-type a:hover,
+.details .container > div:first-of-type button:hover, .details .container > div:nth-of-type(2) a:hover,
+.details .container > div:nth-of-type(2) button:hover {
+  transform: translateY(-3px);
+}
+.details .container > div:first-of-type h1, .details .container > div:nth-of-type(2) h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.details .container > div:first-of-type p, .details .container > div:nth-of-type(2) p {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.details .container > div:first-of-type p.variant-title, .details .container > div:nth-of-type(2) p.variant-title {
+  font-size: 1.5rem;
+}
+.details .container > div:first-of-type div, .details .container > div:nth-of-type(2) div {
+  max-width: 300px;
+}
+.details .container > div:first-of-type div img, .details .container > div:nth-of-type(2) div img {
+  width: 100%;
+  filter: drop-shadow(5px 5px 5px #333);
+}
+.details .container > div:first-of-type div img:hover, .details .container > div:nth-of-type(2) div img:hover {
+  cursor: pointer;
+}
+.details .container > div:nth-of-type(3) {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.details .container > div:nth-of-type(3) > div:first-of-type {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.details .container > div:nth-of-type(3) > div:first-of-type div {
+  text-transform: capitalize;
+  color: white;
+  padding: 0.3rem 0;
+  width: 5rem;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: 500;
+  filter: drop-shadow(2px 2px 2px #555);
+}
+.details .container > div .about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.details .container > div .about h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.details .container > div .about > div {
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 100px;
+  border-left: 2px solid #eee;
+}
+.details .container > div .about > div:last-of-type {
+  border-right: 2px solid #eee;
+  text-transform: capitalize;
+  align-items: center;
+}
+.details .container > div .about > div:first-of-type div svg, .details .container > div .about > div:nth-of-type(2) svg {
+  display: inline;
+}
+.details .container > div .about > div h3 {
+  font-weight: 600;
+}
+.details .container > div .flavor-text {
+  margin: 2rem;
+}
+.details .container > div .flavor-text h3 {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.details .container > div .flavor-text p {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .details .container > div:first-of-type h1 {
+    font-size: 3rem;
+  }
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.evolution-variant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.evolution-variant .evolution-chain {
+  margin-top: 3rem;
+}
+.evolution-variant .evolution-chain.eevee {
+  margin-top: 3rem;
+}
+.evolution-variant .evolution-chain.eevee .second-stage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.evolution-variant .evolution-chain,
+.evolution-variant .variants,
+.evolution-variant .original-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.evolution-variant .evolution-chain h2,
+.evolution-variant .variants h2,
+.evolution-variant .original-form h2 {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+.evolution-variant .evolution-chain .pokemon-info,
+.evolution-variant .variants .pokemon-info,
+.evolution-variant .original-form .pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.evolution-variant .evolution-chain .pokemon-info.active img,
+.evolution-variant .variants .pokemon-info.active img,
+.evolution-variant .original-form .pokemon-info.active img {
+  filter: drop-shadow(0 0 5px #ce2211);
+}
+.evolution-variant .evolution-chain .pokemon-info:not(.active),
+.evolution-variant .variants .pokemon-info:not(.active),
+.evolution-variant .original-form .pokemon-info:not(.active) {
+  cursor: pointer;
+}
+.evolution-variant .evolution-chain .pokemon-info:not(.active):hover img,
+.evolution-variant .variants .pokemon-info:not(.active):hover img,
+.evolution-variant .original-form .pokemon-info:not(.active):hover img {
+  animation: moveUpDown 0.5s ease-in-out infinite;
+}
+.evolution-variant .evolution-chain .pokemon-info:not(.active) img:active,
+.evolution-variant .variants .pokemon-info:not(.active) img:active,
+.evolution-variant .original-form .pokemon-info:not(.active) img:active {
+  transform: scale(1.2);
+}
+.evolution-variant .evolution-chain .pokemon-info h3,
+.evolution-variant .variants .pokemon-info h3,
+.evolution-variant .original-form .pokemon-info h3 {
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+.evolution-variant .evolution-chain .pokemon-info img,
+.evolution-variant .variants .pokemon-info img,
+.evolution-variant .original-form .pokemon-info img {
+  width: 96px !important;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+@media screen and (min-width: 850px) {
+  .evolution-variant .evolution-chain {
+    margin-top: 0;
+  }
+  .evolution-variant .evolution-chain,
+  .evolution-variant .variants {
+    width: 50%;
+  }
+}
+.footer {
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background-color: #ce2211;
+  box-shadow: -3px 0 10px #000;
+}
+.footer p {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.pokemon-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1.5rem;
+  gap: 3rem;
+  width: 100%;
+}
+.pokemon-grid-container .pokemon-container {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.pokemon-grid-container .pokemon-container .pokemon-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pokemon-grid-container .pokemon-container .pokemon-img-container img {
+  width: 100%;
+}
+.pokemon-grid-container .pokemon-container p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 100%;
+}
+.pokemon-grid-container .pokemon-container p.pokemon-number {
+  text-align: end;
+}
+.pokemon-grid-container .pokemon-container p.pokemon-name {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 400px) {
+  .pokemon-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .pokemon-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .pokemon-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .pokemon-grid-container .pokemon-container p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .pokemon-grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

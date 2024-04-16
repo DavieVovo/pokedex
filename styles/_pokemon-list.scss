@@ -1,0 +1,34 @@
+@import "colors.scss";
+.pokemon-container {
+  position: relative;
+  .pokeball-icon {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s ease;
+    path {
+      fill: $primary-red;
+    }
+  }
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s ease;
+  img {
+    transition: 0.5s ease;
+    width: 100%;
+    z-index: 1;
+    filter: drop-shadow(3px 3px 3px #aaa);
+  }
+  &:hover {
+    .pokeball-icon {
+      opacity: 0.1;
+    }
+    img {
+      transform: translateY(-3px);
+    }
+  }
+}
