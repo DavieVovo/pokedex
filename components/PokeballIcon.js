@@ -5,8 +5,6 @@ export default function PokeballIcon() {
     <svg
       className="pokeball-icon"
       xmlns="http://www.w3.org/2000/svg"
-      width="14.2222in"
-      height="14.2222in"
       viewBox="0 0 1024 1024"
     >
       <path
